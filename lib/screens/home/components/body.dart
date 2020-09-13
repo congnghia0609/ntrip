@@ -21,10 +21,14 @@
 import 'package:flutter/material.dart';
 import 'package:ntrip/components/section_title.dart';
 import 'package:ntrip/constants.dart';
+import 'package:ntrip/models/TravelSpot.dart';
+import 'package:ntrip/models/User.dart';
 import 'package:ntrip/size_config.dart';
 
 import 'home_header.dart';
+import 'popular_places.dart';
 import 'search_field.dart';
+import 'top_travelers.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -35,7 +39,10 @@ class Body extends StatelessWidget {
         children: [
           HomeHeader(),
           VerticalSpacing(),
-          SectionTitle(title: "Right Now At Spark", press: () {},),
+          PopularPlaces(),
+          VerticalSpacing(),
+          TopTravelers(),
+          VerticalSpacing(),
         ],
       ),
     );
