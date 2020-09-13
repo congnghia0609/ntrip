@@ -19,25 +19,33 @@
 /// @since Sep 13, 2020
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ntrip/components/app_bar.dart';
-import 'package:ntrip/components/custom_nav_bar.dart';
-import 'package:ntrip/constants.dart';
-import 'package:ntrip/size_config.dart';
 
-import 'components/body.dart';
+import '../constants.dart';
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // You have to call SizeConfig on your starting page
-    SizeConfig().init(context);
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: buildAppBar(isTransparent: true),
-      body: Body(),
-      bottomNavigationBar: CustomNavBar(),
-    );
-  }
+AppBar buildAppBar({bool isTransparent = false, String title}) {
+  return AppBar(
+    centerTitle: true,
+    backgroundColor: isTransparent ? Colors.transparent : Colors.white,
+    elevation: 0,
+    title: Text(
+      title == null ? "" : title,
+      style: TextStyle(
+        color: kTextColor,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    leading: IconButton(
+      icon: Icon(
+        Icons.menu,
+        color: kIconColor,
+      ),
+      onPressed: () {},
+    ),
+    actions: [
+      IconButton(
+        icon: ClipOval(child: Image.asset("assets/images/profile.png")),
+        onPressed: () {},
+      ),
+    ],
+  );
 }
-

@@ -20,6 +20,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ntrip/screens/events/events_screen.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
@@ -44,7 +45,14 @@ class CustomNavBar extends StatelessWidget {
               NavItem(
                 icon: "assets/icons/calendar.svg",
                 title: "Events",
-                press: () {},
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventsScreen(),
+                    ),
+                  );
+                },
               ),
               NavItem(
                 icon: "assets/icons/chat.svg",
@@ -69,6 +77,7 @@ class NavItem extends StatelessWidget {
   final String icon, title;
   final bool isActive;
   final GestureTapCallback press;
+
   const NavItem({
     Key key,
     @required this.icon,
@@ -88,7 +97,7 @@ class NavItem extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [if(isActive) kDefualtShadow],
+          boxShadow: [if (isActive) kDefualtShadow],
         ),
         child: Column(
           children: [
@@ -111,4 +120,3 @@ class NavItem extends StatelessWidget {
     );
   }
 }
-

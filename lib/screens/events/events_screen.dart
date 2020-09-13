@@ -19,22 +19,16 @@
 /// @since Sep 13, 2020
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ntrip/components/app_bar.dart';
 import 'package:ntrip/components/custom_nav_bar.dart';
-import 'package:ntrip/constants.dart';
-import 'package:ntrip/size_config.dart';
 
 import 'components/body.dart';
 
-class HomeScreen extends StatelessWidget {
+class EventsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // You have to call SizeConfig on your starting page
-    SizeConfig().init(context);
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: buildAppBar(isTransparent: true),
+      appBar: buildAppBar(isTransparent: false, title: "New Events"),
       body: Body(),
       bottomNavigationBar: CustomNavBar(),
     );
