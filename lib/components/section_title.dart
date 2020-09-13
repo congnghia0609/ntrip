@@ -19,23 +19,41 @@
 /// @since Sep 13, 2020
 
 import 'package:flutter/material.dart';
-import 'package:ntrip/components/section_title.dart';
-import 'package:ntrip/constants.dart';
-import 'package:ntrip/size_config.dart';
 
-import 'home_header.dart';
-import 'search_field.dart';
+import '../constants.dart';
+import '../size_config.dart';
 
-class Body extends StatelessWidget {
+class SectionTitle extends StatelessWidget {
+  final String title;
+  final GestureTapCallback press;
+  const SectionTitle({
+    Key key,
+    @required this.title,
+    @required this.press,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      clipBehavior: Clip.none,
-      child: Column(
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(kDefaultPadding),
+      ),
+      child: Row(
         children: [
-          HomeHeader(),
-          VerticalSpacing(),
-          SectionTitle(title: "Right Now At Spark", press: () {},),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Spacer(),
+          GestureDetector(
+            onTap: press,
+            child: Text(
+              "See All",
+            ),
+          ),
         ],
       ),
     );
