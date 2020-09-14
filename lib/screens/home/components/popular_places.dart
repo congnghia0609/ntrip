@@ -22,9 +22,6 @@ import 'package:flutter/material.dart';
 import 'package:ntrip/components/place_card.dart';
 import 'package:ntrip/components/section_title.dart';
 import 'package:ntrip/models/TravelSpot.dart';
-import 'package:ntrip/models/User.dart';
-
-import '../../../constants.dart';
 import '../../../size_config.dart';
 
 class PopularPlaces extends StatelessWidget {

@@ -19,10 +19,8 @@
 /// @since Sep 13, 2020
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ntrip/components/app_bar.dart';
 import 'package:ntrip/components/custom_nav_bar.dart';
-import 'package:ntrip/constants.dart';
 import 'package:ntrip/size_config.dart';
 
 import 'components/body.dart';
